@@ -1,0 +1,27 @@
+_target_: src.models.nuclr_v2ga_hier_bin.NuclrV2gaHierBin
+ctx_duration: null  # set in train script
+latent_step: 1.0  # seconds
+bin_size: 0.02
+
+dim: 256
+fusion_dim: 256
+
+stage_depths: [1, 1, 1]
+stage_merge_factors: [2, 2]
+
+self_heads: 4
+dim_head: 64
+cross_scale_heads: 4
+cross_scale_depth: 0
+
+atn_dropout: 0.0
+lin_dropout: 0.2
+
+merge_norm: true
+merge_activation: gelu
+
+stage_summary_type: attention_pool
+use_scale_embeddings: false
+cross_scale_use_cls: false
+fusion_type: last_scale
+
